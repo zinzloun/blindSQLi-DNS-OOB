@@ -1,0 +1,24 @@
+services:
+  web:
+    build: ./web
+    ports:
+      - "8080:5000"
+    networks:
+      dns-net:
+        ipv4_address: 172.20.53.10
+
+  dns-server:
+    build: ./dns-server
+    cap_add:
+      - NET_ADMIN
+    networks:
+      dns-net:
+        ipv4_address: 172.20.53.53
+    ports:
+      - "5353:53/udp"
+
+networks:
+  dns-net:
+    ipam:
+      config:
+        - subnet: 172.20.53.0/24
