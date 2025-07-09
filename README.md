@@ -122,6 +122,7 @@ Decode the last entries
 Incredible enough I found this logic implemented in a real app. The parameter where passed as JSON object in the body request to an API, but the logic was the same as presented in this lab, actually:
 - no inpunt parameters validation
 - control nslookup DNS server
+
 You can eventually automete the process using SQLMap. You can find a good resource at https://blog.cyberadvisors.com/technical-blog/unblinding-blind-sql-injection-using-dns-exfiltration
 
 ## Useful docker commands
