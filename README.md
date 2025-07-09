@@ -123,7 +123,7 @@ Incredible enough I found this logic implemented in a real app. The parameter wh
 - no inpunt parameters validation
 - control nslookup DNS server
 
-You can eventually automete the process using SQLMap. You can find a good resource at https://blog.cyberadvisors.com/technical-blog/unblinding-blind-sql-injection-using-dns-exfiltration
+You can eventually automate the process using SQLMap. You can find a good resource at https://blog.cyberadvisors.com/technical-blog/unblinding-blind-sql-injection-using-dns-exfiltration
 
 ## Useful docker commands
 
