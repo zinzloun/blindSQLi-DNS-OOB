@@ -27,6 +27,19 @@ This lab simulates a vulnerable web application that is susceptible to blind SQL
 ### Run containers
 
 	sudo docker-compose build --no-cache
+ 	sudo docker-compose up                                     
+	Creating network "blindsqli-dns-oob_dns-net" with the default driver
+	Creating blindsqli-dns-oob_dns-server_1 ... done
+	Creating blindsqli-dns-oob_web_1        ... done
+	Attaching to blindsqli-dns-oob_web_1, blindsqli-dns-oob_dns-server_1
+	web_1         |  * Serving Flask app 'app'
+	web_1         |  * Debug mode: off
+	web_1         | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+	web_1         |  * Running on all addresses (0.0.0.0)
+	web_1         |  * Running on http://127.0.0.1:5000
+	web_1         |  * Running on http://172.20.53.10:5000
+	web_1         | Press CTRL+C to quit
+
 	
 This will:
 
