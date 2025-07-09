@@ -21,7 +21,7 @@ This lab simulates a vulnerable web application that is susceptible to blind SQL
 
 ### Clone this repo
 
-	git clone
+	git clone https://github.com/zinzloun/blindSQLi-DNS-OOB.git
 
 ### Run containers
 
